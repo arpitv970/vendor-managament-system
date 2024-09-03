@@ -1,3 +1,4 @@
+import { PurchaseOrderStatus } from 'src/common/enums';
 import { Vendor } from 'src/vendors/vendors.entity';
 import { Entity, Column, PrimaryGeneratedColumn, ManyToOne } from 'typeorm';
 
@@ -25,7 +26,7 @@ export class PurchaseOrder {
   quantity: number;
 
   @Column()
-  status: string;
+  status: PurchaseOrderStatus;
 
   @Column('float', { nullable: true })
   qualityRating: number;

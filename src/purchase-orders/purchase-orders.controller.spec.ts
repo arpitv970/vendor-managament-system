@@ -4,6 +4,7 @@ import { PurchaseOrdersService } from './purchase-orders.service';
 import { PurchaseOrder } from './purchase-orders.entity';
 import { CreatePurchaseOrderDto } from './dto/create-purchase-order.dto';
 import { UpdatePurchaseOrderDto } from './dto/update-purchase-order.dto';
+import { PurchaseOrderStatus } from 'src/common/enums';
 
 describe('PurchaseOrdersController', () => {
   let controller: PurchaseOrdersController;
@@ -16,14 +17,14 @@ describe('PurchaseOrdersController', () => {
     deliveryDate: new Date('2024-09-10'),
     items: { item1: 10, item2: 5 },
     quantity: 15,
-    status: 'Pending',
+    status: PurchaseOrderStatus.PENDING,
     issueDate: new Date('2024-09-01'),
     acknowledgmentDate: new Date('2024-09-02'),
   };
 
   const updatePurchaseOrderDto: UpdatePurchaseOrderDto = {
     // Add properties for updating purchase orders as necessary
-    status: 'Completed',
+    status: PurchaseOrderStatus.DELIVERED,
     deliveryDate: new Date('2024-09-12'),
   };
 
@@ -35,7 +36,7 @@ describe('PurchaseOrdersController', () => {
     deliveryDate: new Date('2024-09-10'),
     items: { item1: 10, item2: 5 },
     quantity: 15,
-    status: 'Pending',
+    status: PurchaseOrderStatus.PENDING,
     qualityRating: 4.5,
     issueDate: new Date('2024-09-01'),
     acknowledgmentDate: new Date('2024-09-02'),
@@ -49,7 +50,7 @@ describe('PurchaseOrdersController', () => {
     deliveryDate: new Date('2024-09-12'),
     items: { item1: 10, item2: 5 },
     quantity: 15,
-    status: 'Completed',
+    status: PurchaseOrderStatus.DELIVERED,
     qualityRating: 4.8,
     issueDate: new Date('2024-09-01'),
     acknowledgmentDate: new Date('2024-09-02'),

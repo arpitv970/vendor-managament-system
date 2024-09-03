@@ -1,11 +1,13 @@
 import {
   IsDate,
+  IsEnum,
   IsNotEmpty,
   IsNumber,
   IsObject,
   IsOptional,
   IsString,
 } from 'class-validator';
+import { PurchaseOrderStatus } from 'src/common/enums';
 
 export class CreatePurchaseOrderDto {
   @IsString()
@@ -13,11 +15,9 @@ export class CreatePurchaseOrderDto {
   poNumber: string;
 
   @IsNumber()
-  @IsNotEmpty()
   vendorId: number;
 
   @IsDate()
-  @IsNotEmpty()
   orderDate: Date;
 
   @IsDate()
@@ -28,15 +28,12 @@ export class CreatePurchaseOrderDto {
   items: Record<string, any>;
 
   @IsNumber()
-  @IsNotEmpty()
   quantity: number;
 
-  @IsString()
-  @IsNotEmpty()
-  status: string;
+  @IsEnum(PurchaseOrderStatus)
+  status: PurchaseOrderStatus;
 
   @IsDate()
-  @IsNotEmpty()
   issueDate: Date;
 
   @IsDate()
