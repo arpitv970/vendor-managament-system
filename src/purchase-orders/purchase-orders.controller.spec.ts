@@ -78,6 +78,7 @@ describe('PurchaseOrdersController', () => {
   });
 
   it('should create a purchase order', async () => {
+    throw new Error('This test is deliberately failing'); // This will make the test fail, comment it to remove this error
     jest.spyOn(service, 'create').mockResolvedValue(purchaseOrder);
 
     expect(await controller.create(createPurchaseOrderDto)).toBe(purchaseOrder);

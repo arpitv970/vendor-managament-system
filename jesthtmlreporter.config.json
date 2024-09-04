@@ -1,6 +1,7 @@
 {
-  "pageTitle": "Test Report",
+  "pageTitle": "Vendor Management Rport",
   "outputPath": "./test-report.html",
   "includeFailureMsg": true,
-  "includeSuiteFailure": true
+  "includeSuiteFailure": true,
+  "styleOverridePath": "./src/common/test-report.css"
 }
