@@ -1,5 +1,5 @@
 {
-  "pageTitle": "Vendor Management Rport",
+  "pageTitle": "Vendor Management Report",
   "outputPath": "./test-report.html",
   "includeFailureMsg": true,
   "includeSuiteFailure": true,
